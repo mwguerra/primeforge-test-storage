@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/', function () {
     $files = [];
     try {
-        $files = collect(Storage::disk('s3')->files())
+        $files = collect(Storage::disk('s3')->allFiles())
             ->map(fn (string $path) => [
                 'name' => $path,
                 'url' => Storage::disk('s3')->url($path),
