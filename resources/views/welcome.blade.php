@@ -65,8 +65,10 @@
             <h2>Upload File</h2>
             <form method="POST" action="/upload" enctype="multipart/form-data" id="upload-form">
                 @csrf
-                <input type="file" name="file" required id="file-input" style="display:none;">
-                <button type="button" id="choose-btn" onclick="document.getElementById('file-input').click();">Choose File</button>
+                <label for="file-input" style="display:inline-block;padding:0.5rem 1.5rem;background:#e94560;color:white;border:none;border-radius:4px;cursor:pointer;font-weight:bold;font-size:inherit;font-family:inherit;line-height:normal;">
+                    Choose File
+                    <input type="file" name="file" required id="file-input" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+                </label>
                 <span id="file-name" style="flex:1;padding:0.5rem;color:#888;">No file chosen</span>
                 <button type="submit">Upload</button>
             </form>
