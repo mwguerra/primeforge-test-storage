@@ -63,11 +63,18 @@
 
         <div class="card">
             <h2>Upload File</h2>
-            <form method="POST" action="/upload" enctype="multipart/form-data">
+            <form method="POST" action="/upload" enctype="multipart/form-data" id="upload-form">
                 @csrf
-                <input type="file" name="file" required>
+                <input type="file" name="file" required id="file-input" style="display:none;">
+                <button type="button" id="choose-btn" onclick="document.getElementById('file-input').click();">Choose File</button>
+                <span id="file-name" style="flex:1;padding:0.5rem;color:#888;">No file chosen</span>
                 <button type="submit">Upload</button>
             </form>
+            <script>
+                document.getElementById('file-input').addEventListener('change', function() {
+                    document.getElementById('file-name').textContent = this.files.length ? this.files[0].name : 'No file chosen';
+                });
+            </script>
         </div>
 
         <div class="card">
