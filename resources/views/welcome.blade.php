@@ -104,5 +104,6 @@
             @endif
         </div>
     </div>
+@include('partials.env-footer')
 </body>
 </html>
