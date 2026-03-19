@@ -29,4 +29,7 @@
         <span style="color:rgba(255,255,255,0.2);">|</span>
         <span style="color:#f472b6;">Reverb</span>
     @endif
+    <span style="margin-left:auto;color:#737373;">
+        PHP {{ phpversion() }} | Node {{ trim(exec('node --version')) }}
+    </span>
 </div>
